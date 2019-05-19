@@ -15,8 +15,10 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,5 +38,37 @@ public class MainActivity extends AppCompatActivity {
         TextView familyTv = (TextView) findViewById(R.id.family);
         TextView colorsTv = (TextView) findViewById(R.id.colors);
         TextView phrasesTv = (TextView) findViewById(R.id.phrases);
+
+        numbersTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), NumbersActivity.class);
+                startActivity(i);
+            }
+        });
+
+        familyTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), FamilyActivity.class);
+                startActivity(i);
+            }
+        });
+
+        colorsTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ColorsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        phrasesTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), PhrasesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
