@@ -3,27 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginLeft="16dp"
    >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
         android:src="@mipmap/ic_launcher"
         android:id="@+id/word_image_view"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@color/tan_background"/>
 
     <LinearLayout
+        android:id="@+id/words_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="16dp">
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical"
+        >
+
         <TextView
             android:id="@+id/miwok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lutti"
             android:layout_marginTop="16dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="18sp"
 
             />
 
@@ -33,6 +40,8 @@
             android:layout_height="wrap_content"
             android:text="one"
             android:layout_marginBottom="16dp"
+            android:textColor="#fff"
+            android:textSize="18sp"
 
             />
     </LinearLayout>
