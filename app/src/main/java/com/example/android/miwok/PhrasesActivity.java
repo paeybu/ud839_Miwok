@@ -52,8 +52,12 @@ public class PhrasesActivity extends AppCompatActivity {
                 mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
             }
         });
+    }
 
-
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
     /**
      * Clean up the media player by releasing its resources.
