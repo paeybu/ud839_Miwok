@@ -17,6 +17,7 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -36,47 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        SimpleFragmentPagerAdapter fragmentPagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(fragmentPagerAdapter);
         
-        setOnClickListener();
 
-    }
-
-    private void setOnClickListener() {
-        TextView numbersTv = (TextView) findViewById(R.id.numbers);
-        TextView familyTv = (TextView) findViewById(R.id.family);
-        TextView colorsTv = (TextView) findViewById(R.id.colors);
-        TextView phrasesTv = (TextView) findViewById(R.id.phrases);
-
-        numbersTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), NumbersActivity.class);
-                startActivity(i);
-            }
-        });
-
-        familyTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), FamilyActivity.class);
-                startActivity(i);
-            }
-        });
-
-        colorsTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ColorsActivity.class);
-                startActivity(i);
-            }
-        });
-
-        phrasesTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), PhrasesActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }
