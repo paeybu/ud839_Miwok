@@ -46,7 +46,6 @@ public class PhrasesActivity extends AppCompatActivity {
                 mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        mMediaPlayer.release();
                         releaseMediaPlayer();
                     }
                 });

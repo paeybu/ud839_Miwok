@@ -45,7 +45,6 @@ public class FamilyActivity extends AppCompatActivity {
                 mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        mediaPlayer.release();
                         releaseMediaPlayer();
                     }
                 });
