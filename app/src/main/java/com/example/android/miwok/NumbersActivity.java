@@ -15,6 +15,12 @@ public class NumbersActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = NumbersActivity.class.getSimpleName();
     private MediaPlayer mMediaPlayer;
+    private MediaPlayer.OnCompletionListener mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +49,7 @@ public class NumbersActivity extends AppCompatActivity {
                 releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(getApplicationContext(), words.get(i).getSoundResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        releaseMediaPlayer();
-                    }
-                });
+                mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
             }
         });
 

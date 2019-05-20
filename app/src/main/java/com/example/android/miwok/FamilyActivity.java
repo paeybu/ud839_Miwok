@@ -13,6 +13,12 @@ public class FamilyActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = FamilyActivity.class.getSimpleName();
     private MediaPlayer mMediaPlayer;
+    private MediaPlayer.OnCompletionListener mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +48,7 @@ public class FamilyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mMediaPlayer = MediaPlayer.create(getApplicationContext(), words.get(i).getSoundResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        releaseMediaPlayer();
-                    }
-                });
+                mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
             }
         });
 
