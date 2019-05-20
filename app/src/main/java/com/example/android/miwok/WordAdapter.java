@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -36,10 +37,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word currentWord = getItem(position);
 
-        TextView defaultTv = (TextView) listItemView.findViewById(R.id.english);
-        TextView miwokTv = (TextView) listItemView.findViewById(R.id.miwok);
+        TextView defaultTv = (TextView) listItemView.findViewById(R.id.default_text_view);
+        TextView miwokTv = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.word_image_view);
-        LinearLayout linearLayout = (LinearLayout) listItemView.findViewById(R.id.words_linear_layout);
+        RelativeLayout linearLayout = (RelativeLayout) listItemView.findViewById(R.id.text_container);
 
         defaultTv.setText(currentWord.getDefaultTranslation());
         miwokTv.setText(currentWord.getMiwokTranslation());
