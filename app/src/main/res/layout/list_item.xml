@@ -16,7 +16,7 @@
     <LinearLayout
         android:id="@+id/words_linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:gravity="center_vertical"
